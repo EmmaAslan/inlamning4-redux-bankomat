@@ -19,7 +19,7 @@ body {
   width: 200px;
   font-size: larger;
   margin: 10px;
-  margin-bottom: 0;
+  margin-bottom: 50px;
   padding: 10px;
   border: solid 3px #EDBB99;
   color: black;
@@ -39,7 +39,7 @@ body {
 .valueButtons {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 0 40px 0 40px
+  margin: 0 40px 50px 40px
 }
 
 .valueButtons button{
