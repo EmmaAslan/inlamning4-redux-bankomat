@@ -7,9 +7,10 @@ export default function App() {
 
   return (
     <div className="App">
-      
+     
       <h1>Redux - ATM Machine</h1>
-      <button
+      
+      <button className='startATM'
         onClick={() => {
           setStartATM(!startATM);
         }}
@@ -17,8 +18,8 @@ export default function App() {
         {!startATM ? "Start ATM" : "Close ATM"}
       </button>
      
-
       {startATM && <ATM />}
+      
     </div>
   );
 }

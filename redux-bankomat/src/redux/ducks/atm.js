@@ -14,7 +14,14 @@ export const oneHundred = () => ({
   export const oneThousand = () => ({
     type: "oneThousand"
   });
-  
+
+  export const depositValue = (value) => ({
+      type: "depositValue",
+      payload: {
+          value: value
+      }
+  });
+
   // actions for withdraw
   export const subOneHundred = () => ({
     type: "subOneHundred"
@@ -30,6 +37,13 @@ export const oneHundred = () => ({
   
   export const subOneThousand = () => ({
     type: "subOneThousand"
+  });
+
+  export const withdrawValue = (value) => ({
+    type: "withdrawValue",
+    payload: {
+      value: value
+    }
   });
 
   //state
@@ -48,6 +62,8 @@ export const oneHundred = () => ({
         return { ...state, count: state.count + 500 };
       case "oneThousand":
         return { ...state, count: state.count + 1000 };
+      case "depositValue":
+          return {...state, count: state.count + action.payload.value}
       case "subOneHundred":
         return { ...state, count: state.count - 100 };
       case "subTwoHundred":
@@ -56,6 +72,8 @@ export const oneHundred = () => ({
         return { ...state, count: state.count - 500 };
       case "subOneThousand":
         return { ...state, count: state.count - 1000 };
+      case "withdrawValue":
+        return {...state, count: state.count - action.payload.value};
       default:
         return state;
     }
